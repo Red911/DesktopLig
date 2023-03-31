@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 {
     public int teamOneScore;
     public int teamTwoScore;
+    
+    public TextMeshProUGUI teamOneScoreTxt;
+    public TextMeshProUGUI teamTwoScoreTxt;
 
     public Timer timer;
     public TransitionTimer transitionTimer;
@@ -35,42 +38,81 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        _teamOneUI = GameObject.Find("Team1Score").GetComponentInChildren<TextMeshProUGUI>();
-        _teamTwoUI = GameObject.Find("Team2Score").GetComponentInChildren<TextMeshProUGUI>();
+        if (SceneManager.GetActiveScene().name != "End")
+        {
+            _teamOneUI = GameObject.Find("Team1Score").GetComponentInChildren<TextMeshProUGUI>();
+            _teamTwoUI = GameObject.Find("Team2Score").GetComponentInChildren<TextMeshProUGUI>();
         
-        timer = GameObject.Find("Timer").GetComponentInChildren<Timer>();
-        transitionTimer = GameObject.Find("TransitionTimer").GetComponentInChildren<TransitionTimer>();
+            timer = GameObject.Find("Timer").GetComponentInChildren<Timer>();
+            transitionTimer = GameObject.Find("TransitionTimer").GetComponentInChildren<TransitionTimer>();
         
-        resultText = GameObject.Find("Result").GetComponentInChildren<TextMeshProUGUI>();
+            resultText = GameObject.Find("Result").GetComponentInChildren<TextMeshProUGUI>();
         
-        _teamOneUI.text = teamOneScore.ToString();
-        _teamTwoUI.text = teamTwoScore.ToString();
+            _teamOneUI.text = teamOneScore.ToString();
+            _teamTwoUI.text = teamTwoScore.ToString();
+        }
+        
+            
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_teamOneUI == null && _teamTwoUI == null && SceneManager.GetActiveScene().name != "End")
+        if (SceneManager.GetActiveScene().name != "End")
         {
-            _teamOneUI = GameObject.Find("Team1Score").GetComponentInChildren<TextMeshProUGUI>();
-            _teamTwoUI = GameObject.Find("Team2Score").GetComponentInChildren<TextMeshProUGUI>();
+            if (_teamOneUI == null && _teamTwoUI == null)
+            {
+                _teamOneUI = GameObject.Find("Team1Score").GetComponentInChildren<TextMeshProUGUI>();
+                _teamTwoUI = GameObject.Find("Team2Score").GetComponentInChildren<TextMeshProUGUI>();
             
-            _teamOneUI.text = teamOneScore.ToString();
-            _teamTwoUI.text = teamTwoScore.ToString();
-        }
+                _teamOneUI.text = teamOneScore.ToString();
+                _teamTwoUI.text = teamTwoScore.ToString();
+            }
         
-        if (timer == null && transitionTimer == null && SceneManager.GetActiveScene().name != "End")
-        {
-            timer = GameObject.Find("Timer").GetComponentInChildren<Timer>();
-            transitionTimer = GameObject.Find("TransitionTimer").GetComponentInChildren<TransitionTimer>();
-        }
+            if (timer == null && transitionTimer == null)
+            {
+                timer = GameObject.Find("Timer").GetComponentInChildren<Timer>();
+                transitionTimer = GameObject.Find("TransitionTimer").GetComponentInChildren<TransitionTimer>();
+            }
         
-        if (resultText == null && SceneManager.GetActiveScene().name != "End")
-        {
-            resultText = GameObject.Find("Result").GetComponentInChildren<TextMeshProUGUI>();
+            if (resultText == null)
+            {
+                resultText = GameObject.Find("Result").GetComponentInChildren<TextMeshProUGUI>();
+            }
+            
+            NextScene();
+            Result();
         }
+        else
+        {
+            teamOneScoreTxt = GameObject.Find("Team1Score").GetComponentInChildren<TextMeshProUGUI>();
+            teamTwoScoreTxt = GameObject.Find("Team2Score").GetComponentInChildren<TextMeshProUGUI>();
 
+            teamOneScoreTxt.text = teamOneScore.ToString();
+            teamTwoScoreTxt.text = teamTwoScore.ToString();
+        }
+        
+        
+    }
+
+    public void UpdateScore(int team)
+    {
+        switch (team)
+        {
+            case 1:
+                teamOneScore += 50;
+                _teamOneUI.text = teamOneScore.ToString();
+                break;
+            case 2:
+                teamTwoScore += 50;
+                _teamTwoUI.text = teamTwoScore.ToString();
+                break;
+        }
+    }
+
+    private void NextScene()
+    {
         switch (SceneManager.GetActiveScene().name)
         {
             case "Dojo" : 
@@ -85,8 +127,10 @@ public class GameManager : MonoBehaviour
                 _getLevelName = "End";
                 break;
         }
-        
-        
+    }
+
+    private void Result()
+    {
         if (!timer.TimerOn)
         {
             transitionTimer.TimerOn = true;
@@ -118,21 +162,6 @@ public class GameManager : MonoBehaviour
                 }
             }
             
-        }
-    }
-
-    public void UpdateScore(int team)
-    {
-        switch (team)
-        {
-            case 1:
-                teamOneScore += 50;
-                _teamOneUI.text = teamOneScore.ToString();
-                break;
-            case 2:
-                teamTwoScore += 50;
-                _teamTwoUI.text = teamTwoScore.ToString();
-                break;
         }
     }
 }

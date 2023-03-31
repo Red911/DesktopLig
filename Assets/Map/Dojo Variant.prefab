@@ -53,10 +53,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e5a9c65baa536e64eba0cec4afaece37, type: 3}
       propertyPath: m_Name
-      value: Dojo
+      value: Dojo Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5a9c65baa536e64eba0cec4afaece37, type: 3}
+--- !u!1 &7366724074546543225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e5a9c65baa536e64eba0cec4afaece37, type: 3}
+  m_PrefabInstance: {fileID: 7708673076017694504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2192883719493633422
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7366724074546543225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6806264884290102970, guid: e5a9c65baa536e64eba0cec4afaece37, type: 3}
 --- !u!4 &7885816345661169859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e5a9c65baa536e64eba0cec4afaece37, type: 3}

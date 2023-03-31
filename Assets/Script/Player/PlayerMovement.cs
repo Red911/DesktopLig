@@ -9,11 +9,12 @@ public class PlayerMovement : MonoBehaviour
     
     public GameObject projectilePrefab;
     private Animator _animator;
+    private GameObject playerSkin;
     private int isMovingHash;
     private Rigidbody rb;
     private PlayerInputHandler _playerInputHandler;
 
-   public int _playerID;
+    public int _playerID;
     
     public float speed = 20;
     public float turnSmoothTime = 0.1f;
@@ -40,6 +41,14 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         _playerInputHandler = GetComponent<PlayerInputHandler>();
         _initialiseLevel = GameObject.Find("LevelInitializer").GetComponent<InitialiseLevel>();
+        
+        for (int i = 0; i < _playerInputHandler.playerSkins.Count; i++)
+        {
+            if (_playerInputHandler.playerSkins[i].activeInHierarchy)
+            {
+                playerSkin = _playerInputHandler.playerSkins[i];
+            }
+        }
     }
     
     public void SetInputVector(Vector2 direction)
@@ -51,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Vector3 direction = new Vector3(_inputVector.x, 0f,_inputVector.y).normalized;
+        
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
@@ -60,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
             rb.MovePosition(transform.position + direction * speed * Time.deltaTime);
         }
         
-        _animator.SetBool(isMovingHash, direction.magnitude >= 0.1f);
+        // _animator.SetBool(isMovingHash, direction.magnitude >= 0.1f);
 
         if (isDead)
         {
@@ -111,17 +121,18 @@ public class PlayerMovement : MonoBehaviour
     }
     private void KillObject()
     {
-        // Destroy(target); //détruit l'objet du jeu
-        GetComponent<MeshRenderer>().enabled = false;
+        playerSkin.SetActive(false);
         GetComponent<CapsuleCollider>().enabled = false;
+        rb.isKinematic = true;
         canShoot = false;
     
     }
     
     private void ResurectPlayer()
     {
-        GetComponent<MeshRenderer>().enabled = true;
+        playerSkin.SetActive(true);
         GetComponent<CapsuleCollider>().enabled = true;
+        rb.isKinematic = false;
 
         if (_playerInputHandler.whichTeam == 1)
         {

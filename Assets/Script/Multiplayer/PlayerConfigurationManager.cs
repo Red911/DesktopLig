@@ -27,6 +27,11 @@ public class PlayerConfigurationManager : MonoBehaviour
             DontDestroyOnLoad(Instance);
             _playerConfigs = new List<PlayerConfiguration>();
         }
+
+        if (SceneManager.GetActiveScene().name == "End")
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public List<PlayerConfiguration> GetPlayerConfigs()

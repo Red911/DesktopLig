@@ -25,6 +25,7 @@ public class Boomerang : MonoBehaviour
         
         rb = GetComponent<Rigidbody>();
         startPosition = transform.position;
+        
         // transform.Rotate(90f, 0f, 0f, Space.Self);
         
         // rb.velocity = transform.forward * speed;
@@ -83,6 +84,7 @@ public class Boomerang : MonoBehaviour
                 var direction = Vector3.Reflect(transform.forward, normal);
                 rb.AddForce(direction * bounceSpeed, ForceMode.Impulse);
                 rb.velocity *= percentagePertVelocity;
+                Destroy(this.gameObject, 5f);
                 
             }
             else
@@ -97,9 +99,14 @@ public class Boomerang : MonoBehaviour
                 
                 // If shouldBounce is false, stick the projectile to the wall
                 rb.constraints = RigidbodyConstraints.FreezeAll;
+                Destroy(this.gameObject, 2f);
                 
             }
             
+        }
+        else if(col.gameObject.CompareTag("Shuriken"))
+        {
+            Destroy(this.gameObject);
         }
     }
     

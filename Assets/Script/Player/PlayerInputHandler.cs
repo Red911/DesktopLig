@@ -9,7 +9,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
     private PlayerConfiguration _playerConfiguration;
     private PlayerMovement _playerMovement;
-    [SerializeField] private List<GameObject> playerSkins;
+    public List<GameObject> playerSkins;
     public int whichTeam;
     private int whichSkin;
     private PlayerControls _controls;
@@ -23,7 +23,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void InitializePlayer(PlayerConfiguration pc)
     {
         _playerConfiguration = pc;
-        _playerMovement._playerID = pc.PlayerIndex++;
+        _playerMovement._playerID = pc.PlayerIndex;
         whichSkin = pc.PlayerSkins;
         playerSkins[whichSkin].SetActive(true);
         whichTeam = pc.PlayerTeam;
