@@ -7,19 +7,21 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     
-    
     public GameObject projectilePrefab;
-    private CharacterController _controller;
+    private Animator _animator;
+    private int isMovingHash;
+    private Rigidbody rb;
     private PlayerInputHandler _playerInputHandler;
 
    public int _playerID;
     
-    public float speed = 6;
+    public float speed = 20;
     public float turnSmoothTime = 0.1f;
     private float _turnSmoothVelocity;
     private Vector2 _inputVector;
-    
-    [Header("Shuriken")]
+
+    [Header("Shuriken")] 
+    public Transform ShurikenSpawn;
     private bool canShoot = true;
     public float fireRate = 1f;
     private Coroutine fireCoroutine;
@@ -32,7 +34,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        _controller = GetComponent<CharacterController>();
+        _animator = GetComponentInChildren<Animator>();
+        isMovingHash = Animator.StringToHash("isMoving");
+
+        rb = GetComponent<Rigidbody>();
         _playerInputHandler = GetComponent<PlayerInputHandler>();
         _initialiseLevel = GameObject.Find("LevelInitializer").GetComponent<InitialiseLevel>();
     }
@@ -51,10 +56,12 @@ public class PlayerMovement : MonoBehaviour
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0, angle, 0);
-
-            _controller.Move(direction * speed * Time.deltaTime);
+            
+            rb.MovePosition(transform.position + direction * speed * Time.deltaTime);
         }
         
+        _animator.SetBool(isMovingHash, direction.magnitude >= 0.1f);
+
         if (isDead)
         {
             isDead = false;
@@ -83,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canShoot = false;
         compteurShuriken++;
-        GameObject shuriken = Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation);
+        GameObject shuriken = Instantiate(projectilePrefab, ShurikenSpawn.position, transform.rotation);
         if (compteurShuriken == 3)
         {
             shuriken.GetComponent<Boomerang>().activeBounce = true;
@@ -106,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Destroy(target); //détruit l'objet du jeu
         GetComponent<MeshRenderer>().enabled = false;
-        GetComponent<CharacterController>().enabled = false;
+        GetComponent<CapsuleCollider>().enabled = false;
         canShoot = false;
     
     }
@@ -114,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
     private void ResurectPlayer()
     {
         GetComponent<MeshRenderer>().enabled = true;
-        GetComponent<CharacterController>().enabled = true;
+        GetComponent<CapsuleCollider>().enabled = true;
 
         if (_playerInputHandler.whichTeam == 1)
         {

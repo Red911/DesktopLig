@@ -35,11 +35,11 @@ public class PlayerSetupMenuController : MonoBehaviour
         
         PlayerConfigurationManager.Instance.SetPlayerTeam(_playeIndex, whichTeam);
     }
-    public void SetColor(Material color)
+    public void SetSkin(int whichSkin)
     {
         if(!_inputEnabled) {return;}
         
-        PlayerConfigurationManager.Instance.SetPlayerColor(_playeIndex, color);
+        PlayerConfigurationManager.Instance.SetPlayerSkins(_playeIndex, whichSkin);
         readyPanel.SetActive(true);
         readyButton.Select();
         menuPanel.SetActive(false);

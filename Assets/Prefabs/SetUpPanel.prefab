@@ -66,10 +66,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Team 02
+  m_text: 'T-Red
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
+  m_sharedMaterial: {fileID: 7262198888208701219, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,8 +95,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 58
+  m_fontSizeBase: 58
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -283,7 +285,7 @@ GameObject:
   - component: {fileID: 4322560206499130904}
   - component: {fileID: 4322560206499130905}
   m_Layer: 5
-  m_Name: Yellow
+  m_Name: Blue2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,14 +298,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4322560206499130903}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4322560207849950889}
   m_Father: {fileID: 4322560207710737567}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -406,12 +408,12 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4322560206408017520}
         m_TargetAssemblyTypeName: PlayerSetupMenuController, Assembly-CSharp
-        m_MethodName: SetColor
-        m_Mode: 2
+        m_MethodName: SetSkin
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 3779ac0f1e7ddc647819d11ac12cb646, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -616,12 +618,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Team 01
-
-'
+  m_text: El President
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
+  m_sharedMaterial: {fileID: 7262198888208701219, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 4322560207114865357}
   - component: {fileID: 4322560207114865354}
   m_Layer: 5
-  m_Name: Blue
+  m_Name: Blue1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -823,11 +823,11 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4322560206408017520}
         m_TargetAssemblyTypeName: PlayerSetupMenuController, Assembly-CSharp
-        m_MethodName: SetColor
-        m_Mode: 2
+        m_MethodName: SetSkin
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 3779ac0f1e7ddc647819d11ac12cb646, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -901,8 +901,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ready UP
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
+  m_sharedMaterial: {fileID: 7262198888208701219, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -926,8 +926,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.6
-  m_fontSizeBase: 54.6
+  m_fontSize: 86.3
+  m_fontSizeBase: 86.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -981,7 +981,7 @@ GameObject:
   - component: {fileID: 4322560207359772881}
   - component: {fileID: 4322560207359772878}
   m_Layer: 5
-  m_Name: Green
+  m_Name: Red2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1104,12 +1104,12 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4322560206408017520}
         m_TargetAssemblyTypeName: PlayerSetupMenuController, Assembly-CSharp
-        m_MethodName: SetColor
-        m_Mode: 2
+        m_MethodName: SetSkin
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 113f8dff2fdabc044ab422a0313f534b, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1127,7 +1127,7 @@ GameObject:
   - component: {fileID: 4322560207385986792}
   - component: {fileID: 4322560207385986793}
   m_Layer: 5
-  m_Name: Red
+  m_Name: Red1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1147,7 +1147,7 @@ RectTransform:
   m_Children:
   - {fileID: 4322560207468054083}
   m_Father: {fileID: 4322560207710737567}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1250,12 +1250,12 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4322560206408017520}
         m_TargetAssemblyTypeName: PlayerSetupMenuController, Assembly-CSharp
-        m_MethodName: SetColor
-        m_Mode: 2
+        m_MethodName: SetSkin
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 113f8dff2fdabc044ab422a0313f534b, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1328,8 +1328,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Title
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
+  m_sharedMaterial: {fileID: 7262198888208701219, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1353,8 +1353,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 83.33
-  m_fontSizeBase: 83.33
+  m_fontSize: 135.04
+  m_fontSizeBase: 135.04
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1461,10 +1461,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Team 02
+  m_text: 'El Tresorier
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
+  m_sharedMaterial: {fileID: 7262198888208701219, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1488,8 +1490,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 59.3
+  m_fontSizeBase: 59.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1560,8 +1562,8 @@ RectTransform:
   m_Children:
   - {fileID: 4322560208117016111}
   - {fileID: 4322560207114865355}
-  - {fileID: 4322560207385986790}
   - {fileID: 4322560206499130902}
+  - {fileID: 4322560207385986790}
   - {fileID: 4322560207359772879}
   m_Father: {fileID: 4322560206408017519}
   m_RootOrder: 0
@@ -1637,10 +1639,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Team 01
+  m_text: Pigeon24
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
+  m_sharedMaterial: {fileID: 7262198888208701219, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1664,8 +1666,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 58
+  m_fontSizeBase: 58
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1774,8 +1776,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ready !
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
+  m_sharedMaterial: {fileID: 7262198888208701219, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1838,7 +1840,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4322560208117016108
@@ -1876,8 +1878,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.40875003, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.56666666}
-  m_AnchoredPosition: {x: -107.43788, y: 58.336197}
-  m_SizeDelta: {x: 238.1243, y: 25.3275}
+  m_AnchoredPosition: {x: 36.499985, y: 78.954605}
+  m_SizeDelta: {x: 727, y: 77.3747}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4322560208117016113
 CanvasRenderer:
@@ -1907,10 +1909,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select a Color
+  m_text: Select a character
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
+  m_sharedMaterial: {fileID: 7262198888208701219, guid: 1a2c285ab9596104d86c2a2c3d3167d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1934,15 +1936,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.8
-  m_fontSizeBase: 48.8
+  m_fontSize: 84
+  m_fontSizeBase: 84
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

@@ -51,7 +51,7 @@ public class Boomerang : MonoBehaviour
             rb.MovePosition(transform.position + transform.forward * speed * Time.fixedDeltaTime);
 
             // Rotation du boomerang pendant le lancer
-            transform.Rotate(Vector3.forward, rotationSpeed * Time.fixedDeltaTime * 1000f, Space.Self);
+            // transform.Rotate(Vector3.forward, rotationSpeed * Time.fixedDeltaTime * 1000f, Space.Self);
 
             // Si le boomerang a parcouru la distance maximale, il commence à revenir
             if (Vector3.Distance(transform.position, startPosition) > distance)

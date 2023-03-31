@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5560101975323845525}
   - component: {fileID: 1274123700195544128}
   - component: {fileID: -3790086853455045256}
+  - component: {fileID: 6868851106887750834}
   m_Layer: 0
   m_Name: Shuriken
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5560101975323845524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0078125, y: 0.0078125, z: 0.0078125}
+  m_LocalScale: {x: 0.0625, y: 0.0625, z: 0.0625}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5843881305199480034}
@@ -83,6 +84,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!95 &6868851106887750834
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5560101975323845524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93e95c18d51424f4eb14807222786133, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &6238358946160798473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -154,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leshushu
       objectReference: {fileID: 0}
+    - target: {fileID: 1489170624299286622, guid: b4b8d4f068c4718478caca10951bafd0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 239378781582670930, guid: c8c12368f920af54e87ed7de3d1c716b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b8d4f068c4718478caca10951bafd0, type: 3}
 --- !u!4 &5843881305199480034 stripped

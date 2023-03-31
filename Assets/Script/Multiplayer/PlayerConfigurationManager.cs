@@ -34,9 +34,9 @@ public class PlayerConfigurationManager : MonoBehaviour
         return _playerConfigs;
     }
 
-    public void SetPlayerColor(int index, Material color)
+    public void SetPlayerSkins(int index, int whichSkin)
     {
-        _playerConfigs[index].PlayerMaterial = color;
+        _playerConfigs[index].PlayerSkins = whichSkin;
     }
     
     public void SetPlayerTeam(int index, int whichTeam)
@@ -76,5 +76,5 @@ public class PlayerConfiguration
     
     public int PlayerTeam {get; set;}
     public bool IsReady {get; set;}
-    public Material PlayerMaterial {get; set;}
+    public int PlayerSkins {get; set;}
 }

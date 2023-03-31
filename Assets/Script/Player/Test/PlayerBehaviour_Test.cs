@@ -9,7 +9,7 @@ public class PlayerBehaviour_Test : MonoBehaviour
     public int team;
     
     public GameObject projectilePrefab;
-    private CharacterController _controller;
+    private Rigidbody rb;
     private PlayerControls _controls;
 
     private bool canShoot = true;
@@ -19,8 +19,6 @@ public class PlayerBehaviour_Test : MonoBehaviour
     
     public float timebetweeDeath = 3f;
     public bool isDead;
-
-    [HideInInspector]public int _playerID;
     public Transform SpawnPoint;
     
     public float speed = 6;
@@ -48,7 +46,7 @@ public class PlayerBehaviour_Test : MonoBehaviour
 
     void Start()
     {
-        _controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
         
     }
     public void OnMove(InputAction.CallbackContext ctx)
@@ -75,7 +73,7 @@ public class PlayerBehaviour_Test : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0, angle, 0);
 
-            _controller.Move(direction * speed * Time.deltaTime);
+            rb.MovePosition(transform.position + direction * speed * Time.deltaTime);
         }
     }
 

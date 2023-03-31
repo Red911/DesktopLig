@@ -9,8 +9,9 @@ public class PlayerInputHandler : MonoBehaviour
 {
     private PlayerConfiguration _playerConfiguration;
     private PlayerMovement _playerMovement;
-    [SerializeField] private MeshRenderer playerMesh;
+    [SerializeField] private List<GameObject> playerSkins;
     public int whichTeam;
+    private int whichSkin;
     private PlayerControls _controls;
 
     private void Awake()
@@ -23,7 +24,8 @@ public class PlayerInputHandler : MonoBehaviour
     {
         _playerConfiguration = pc;
         _playerMovement._playerID = pc.PlayerIndex++;
-        playerMesh.material = pc.PlayerMaterial;
+        whichSkin = pc.PlayerSkins;
+        playerSkins[whichSkin].SetActive(true);
         whichTeam = pc.PlayerTeam;
         _playerConfiguration.Input.onActionTriggered += InputOnActionTriggered;
     }
