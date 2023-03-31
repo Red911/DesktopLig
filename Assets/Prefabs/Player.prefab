@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4526048610313279794}
   - component: {fileID: 4965593105808717092}
   - component: {fileID: 4655142994275679348}
-  - component: {fileID: 4273180024023700033}
+  - component: {fileID: 6060332312081674246}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5560101975323845524, guid: 774c4f868cb49f54db2e3988adbc89a4, type: 3}
   _playerID: 0
-  speed: 50
+  speed: 20
   turnSmoothTime: 0.1
   ShurikenSpawn: {fileID: 3607827167221330592}
   fireRate: 1
@@ -175,7 +175,7 @@ CapsuleCollider:
   m_Height: 3.81
   m_Direction: 1
   m_Center: {x: -0.21, y: 0.6, z: 0.25}
---- !u!54 &4273180024023700033
+--- !u!54 &6060332312081674246
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,9 +188,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!1001 &592537132025250237
 PrefabInstance:
   m_ObjectHideFlags: 0
