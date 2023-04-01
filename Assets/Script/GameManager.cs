@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI resultText;
 
     private string _getLevelName;
+    public GameObject _safeZoneTeam1;
+    public GameObject _safeZoneTeam2;
     public static GameManager Instance { get; set; }
 
     private void Awake()
@@ -40,6 +42,9 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name != "End")
         {
+            _safeZoneTeam1 = GameObject.Find("Team1SafeZone");
+            _safeZoneTeam2 = GameObject.Find("Team2SafeZone");
+            
             _teamOneUI = GameObject.Find("Team1Score").GetComponentInChildren<TextMeshProUGUI>();
             _teamTwoUI = GameObject.Find("Team2Score").GetComponentInChildren<TextMeshProUGUI>();
         
@@ -79,6 +84,12 @@ public class GameManager : MonoBehaviour
             if (resultText == null)
             {
                 resultText = GameObject.Find("Result").GetComponentInChildren<TextMeshProUGUI>();
+            }
+
+            if (_safeZoneTeam1 == null && _safeZoneTeam2 == null)
+            {
+                _safeZoneTeam1 = GameObject.Find("Team1SafeZone");
+                _safeZoneTeam2 = GameObject.Find("Team2SafeZone");
             }
             
             NextScene();
@@ -162,6 +173,34 @@ public class GameManager : MonoBehaviour
                 }
             }
             
+        }
+    }
+
+    public void EnableSafeZone(int whichTeam)
+    {
+        if (whichTeam == 1)
+        {
+            _safeZoneTeam1.GetComponent<MeshRenderer>().enabled = true;
+            _safeZoneTeam1.GetComponent<BoxCollider>().enabled = true;
+        }
+        else if(whichTeam == 2)
+        {
+            _safeZoneTeam2.GetComponent<MeshRenderer>().enabled = true;
+            _safeZoneTeam2.GetComponent<BoxCollider>().enabled = true;
+        }
+    }
+    
+    public void DisableSafeZone(int whichTeam)
+    {
+        if (whichTeam == 1)
+        {
+            _safeZoneTeam1.GetComponent<MeshRenderer>().enabled = false;
+            _safeZoneTeam1.GetComponent<BoxCollider>().enabled = false;
+        }
+        else if(whichTeam == 2)
+        {
+            _safeZoneTeam2.GetComponent<MeshRenderer>().enabled = false;
+            _safeZoneTeam2.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }

@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Shuriken")] 
     public Transform ShurikenSpawn;
-    private bool canShoot = true;
+    [HideInInspector]public bool canShoot = true;
     public float fireRate = 1f;
     private Coroutine fireCoroutine;
     private int compteurShuriken;
@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         _playerInputHandler = GetComponent<PlayerInputHandler>();
         _initialiseLevel = GameObject.Find("LevelInitializer").GetComponent<InitialiseLevel>();
+
+        
         
         for (int i = 0; i < _playerInputHandler.playerSkins.Count; i++)
         {
@@ -133,15 +135,33 @@ public class PlayerMovement : MonoBehaviour
         playerSkin.SetActive(true);
         GetComponent<CapsuleCollider>().enabled = true;
         rb.isKinematic = false;
-
+        canShoot = true;
         if (_playerInputHandler.whichTeam == 1)
         {
             transform.position = _initialiseLevel.teamOnePlayerSpawns[_playerID].position;
+            StartCoroutine(SpawnSafeZone(_playerInputHandler.whichTeam));
         }
         else if (_playerInputHandler.whichTeam == 2)
         {
             transform.position = _initialiseLevel.teamTwoPlayerSpawns[_playerID].position;
+            StartCoroutine(SpawnSafeZone(_playerInputHandler.whichTeam));
         }
-        canShoot = true;
+        
+    }
+
+    private IEnumerator SpawnSafeZone(int whichTeam)
+    {
+        if (whichTeam == 1)
+        {
+            GameManager.Instance.EnableSafeZone(whichTeam);
+            yield return new WaitForSeconds(10f);
+            GameManager.Instance.DisableSafeZone(whichTeam);
+        }
+        else if(whichTeam == 2)
+        {
+            GameManager.Instance.EnableSafeZone(whichTeam);
+            yield return new WaitForSeconds(10f);
+            GameManager.Instance.DisableSafeZone(whichTeam);
+        }
     }
 }

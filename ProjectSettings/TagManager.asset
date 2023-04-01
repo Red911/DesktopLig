@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Shuriken
+  - SpawnZone
   layers:
   - Default
   - TransparentFX
