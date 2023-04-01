@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0b2c404f195be4b91d18b2e0cd7bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeLeft: 60
+  TimeLeft: 180
   TimerOn: 0
   TimerTxt: {fileID: 585169104}
 --- !u!222 &585169106
