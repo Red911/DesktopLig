@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: Dojo
-  _maxPlayer: 4
+  _maxPlayer: 2
 --- !u!114 &3485963741541905656
 MonoBehaviour:
   m_ObjectHideFlags: 0
