@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             rb.MovePosition(transform.position + direction * speed * Time.deltaTime);
         }
         
-        // _animator.SetBool(isMovingHash, direction.magnitude >= 0.1f);
+        _animator.SetBool(isMovingHash, direction.magnitude >= 0.1f);
 
         if (isDead)
         {
