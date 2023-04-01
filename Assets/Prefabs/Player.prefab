@@ -137,9 +137,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5560101975323845524, guid: 774c4f868cb49f54db2e3988adbc89a4, type: 3}
   _playerID: 0
-  speed: 20
+  speed: 25
   turnSmoothTime: 0.1
   ShurikenSpawn: {fileID: 3607827167221330592}
+  canShoot: 1
   fireRate: 1
   timebetweeDeath: 3
   isDead: 0
